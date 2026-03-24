@@ -1,0 +1,95 @@
+import car1 from "../assets/images/mercedes_EQS.png";
+import car2 from "../assets/images/MERCESDES_GLS.png";
+import car3 from "../assets/images/mclaren-side-models-menu-750s.png";
+import car4 from "../assets/images/Urus.webp";
+import car5 from "../assets/images/porche_911_droptop.avif";
+import car6 from "../assets/images/Porche.avif";
+
+const cars = [
+  {
+    id: 1,
+    name: "Mercedes-Benz EQS 450+",
+    year: 2024,
+    fuel: "Electric",
+    transmission: "Automatic",
+    wheelDrive: "All-Wheel Drive",
+    price: 1850000,
+    description:
+      "The all-electric flagship sedan with cutting-edge technology and unmatched luxury.",
+    image: car1,
+    category: "Electric",
+    fit: "cover",
+  },
+  {
+    id: 2,
+    name: "Mercedes-Benz GLS 450",
+    year: 2024,
+    fuel: "Gasoline",
+    transmission: "Automatic",
+    wheelDrive: "4-Wheel Drive",
+    price: 1650000,
+    description:
+      "A full-size luxury SUV offering exceptional comfort and powerful performance.",
+    image: car2,
+    category: "SUV",
+    fit: "cover",
+  },
+  {
+    id: 3,
+    name: "McLaren 750S",
+    year: 2021,
+    fuel: "Gasoline",
+    transmission: "Automatic",
+    wheelDrive: "Rear-Wheel Drive",
+    price: 6200000,
+    description:
+      "A breathtaking supercar with a 4.0L twin-turbo V8 producing 750PS and 800Nm of torque.",
+    image: car3,
+    category: "Supercar",
+    fit: "cover",
+  },
+  {
+    id: 4,
+    name: "Lamborghini Urus Performante",
+    year: 2025,
+    fuel: "Gasoline",
+    transmission: "Automatic",
+    wheelDrive: "All-Wheel Drive",
+    price: 5800000,
+    description:
+      "The world's first Super SUV with a 4.0L twin-turbo V8 engine producing 666 horsepower.",
+    image: car4,
+    category: "Super SUV",
+    fit: "cover",
+  },
+  {
+    id: 5,
+    name: "Porsche 911 Carrera Cabriolet",
+    year: 2025,
+    fuel: "Gasoline",
+    transmission: "Manual",
+    wheelDrive: "Rear-Wheel Drive",
+    price: 2950000,
+    description:
+      "Iconic open-top sports car with a 3.0L twin-turbo flat-six engine and breathtaking performance.",
+    image: car5,
+    category: "Sport",
+    fit: "contain",
+  },
+  {
+    id: 6,
+    name: "Porsche 911 GT3",
+    year: 2026,
+    fuel: "Gasoline",
+    transmission: "Manual",
+    wheelDrive: "Rear-Wheel Drive",
+    price: 3850000,
+    description:
+      "Track-focused legend with a naturally aspirated 4.0L flat-six engine, delivering a pure driving experience.",
+    image: car6,
+    category: "Limited",
+    fit: "contain",
+  },
+];
+
+export default cars;
