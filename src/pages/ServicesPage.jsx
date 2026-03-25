@@ -1,8 +1,11 @@
 import React from 'react'
+import Spinner from '../components/Spinner'
 
 function ServicesPage() {
   return (
-    <div>ServicesPage</div>
+    <div>
+      <Spinner/>
+    </div>
   )
 }
 
