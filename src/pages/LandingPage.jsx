@@ -7,12 +7,10 @@ import ProductHighlights from "../components/ProductHighlights";
 const LandingPage = () => {
   return (
     <div>
-      
       <Hero />
       <CompanyIntroduction />
       <ProductHighlights />
       <Mission />
-  
     </div>
   );
 }

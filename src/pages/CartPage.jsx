@@ -2,10 +2,21 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../store/Slice";
 import { useRive, useStateMachineInput } from "@rive-app/react-canvas";
 import { NavLink } from "react-router-dom";
+import Spinner from "../components/Spinner";
+import { useState } from "react";
 
 function CartPage() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
+ const [checkout, setCheckout] = useState(false);
+  
+  const handleCheckout= ()=>{
+    setCheckout(true);
+    setTimeout(()=>{
+      setCheckout(false);
+    }, 2000);
+
+  }
 
   const { RiveComponent, rive } = useRive({
     src: "/animations/5225-10455-market-basket.riv",
@@ -91,10 +102,15 @@ function CartPage() {
 
       <div className="mt-10 text-right">
         <p className="text-2xl font-bold">Total: R {total.toLocaleString()}</p>
-        <button className="mt-4 bg-black text-white px-8 py-3 hover:bg-gray-800 transition">
+        <button className="mt-4 bg-black text-white px-8 py-3 hover:bg-gray-800 transition" onClick={handleCheckout}>
           Checkout
         </button>
       </div>
+        {checkout && (
+        <div className="flex justify-center items-center mt-6">
+          <Spinner />
+        </div>
+      )}
     </div>
   );
 }

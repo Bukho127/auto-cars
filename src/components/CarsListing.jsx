@@ -2,9 +2,11 @@
 import cars from "../data/Product";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/Slice"
+import { useNavigate } from 'react-router-dom';
 
 function CarsListing() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
 
   return (
@@ -71,7 +73,7 @@ function CarsListing() {
                 >
                   Add to Cart
                 </button>
-                <button className="flex-1 bg-black hover:bg-gray-800 text-white text-sm font-semibold py-2 px-4 cursor-pointer transition">
+                <button className="flex-1 bg-black hover:bg-gray-800 text-white text-sm font-semibold py-2 px-4 cursor-pointer transition" onClick={() => navigate(`/products/${car.id}`)}>
                   View Details
                 </button>
               </div>
