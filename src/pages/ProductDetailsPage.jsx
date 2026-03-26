@@ -9,7 +9,6 @@ function ProductDetailPage() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
-
   useEffect(() => {
     const found = products.find(p => p.id === Number(id))
     setProduct(found);
@@ -17,7 +16,6 @@ function ProductDetailPage() {
 
 
   if (!product) return <Spinner/>
-
   return <ProductDetail product={product} />;
 }
 

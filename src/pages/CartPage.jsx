@@ -4,19 +4,21 @@ import { useRive, useStateMachineInput } from "@rive-app/react-canvas";
 import { NavLink } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 function CartPage() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
- const [checkout, setCheckout] = useState(false);
-  
-  const handleCheckout= ()=>{
-    setCheckout(true);
-    setTimeout(()=>{
-      setCheckout(false);
-    }, 2000);
+  const [checkout, setCheckout] = useState(false);
+ const notify = () => toast.success("Checkout was successful!");
 
-  }
+  const handleCheckout = () => {
+    setCheckout(true);
+    setTimeout(() => {
+      setCheckout(false);
+      notify();
+    }, 2000);
+  };
 
   const { RiveComponent, rive } = useRive({
     src: "/animations/5225-10455-market-basket.riv",
@@ -61,6 +63,8 @@ function CartPage() {
 
   return (
     <div className="max-w-7xl mx-auto py-28 px-4">
+      <ToastContainer />
+
       <h2 className="text-3xl font-bold mb-8">Your Cart</h2>
 
       <div className="flex flex-col gap-6">
@@ -102,11 +106,16 @@ function CartPage() {
 
       <div className="mt-10 text-right">
         <p className="text-2xl font-bold">Total: R {total.toLocaleString()}</p>
-        <button className="mt-4 bg-black text-white px-8 py-3 hover:bg-gray-800 transition" onClick={handleCheckout}>
+        <button
+          className="mt-4 bg-black text-white px-8 py-3 hover:bg-gray-800 transition"
+          onClick={() => {
+            handleCheckout();
+          }}
+        >
           Checkout
         </button>
       </div>
-        {checkout && (
+      {checkout && (
         <div className="flex justify-center items-center mt-6">
           <Spinner />
         </div>

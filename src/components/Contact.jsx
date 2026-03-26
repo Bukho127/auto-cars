@@ -7,8 +7,6 @@ function Contact() {
       <h1 className="text-5xl font-bold mb-16">Contact</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-
-        {/* Left Column */}
         <div className="space-y-10">
 
           <div>
@@ -54,7 +52,6 @@ function Contact() {
 
         </div>
 
-        {/* Right Column */}
         <div>
           <h2 className="font-bold text-lg mb-6">Press & Media</h2>
 
